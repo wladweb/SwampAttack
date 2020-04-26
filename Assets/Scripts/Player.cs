@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
     private Weapon _currentWeapon;
     private Animator _animator;
 
+    public int Money { get; private set; }
+
     private void Start()
     {
         _currentWeapon = _weapons[0];
@@ -24,6 +26,21 @@ public class Player : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             _currentWeapon.Shoot(_shootPoint);
+        }
+    }
+
+    private void OnEnemyDied(int reward)
+    {
+        Money += reward;
+    }
+
+    public void ApplyDamage(int damage)
+    {
+        _currentHealth -= damage;
+
+        if (_currentHealth <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 }
