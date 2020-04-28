@@ -29,11 +29,6 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void OnEnemyDied(int reward)
-    {
-        Money += reward;
-    }
-
     public void ApplyDamage(int damage)
     {
         _currentHealth -= damage;
@@ -42,5 +37,10 @@ public class Player : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void AddMoney(int money)
+    {
+        Money += money;
     }
 }

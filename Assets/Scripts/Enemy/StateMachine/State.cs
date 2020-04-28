@@ -27,7 +27,9 @@ public abstract class State : MonoBehaviour
         foreach (Transition transition in _transitions)
         {
             if (transition.NeedTransit)
+            {
                 return transition.TargetState;
+            }
         }
 
         return null;
