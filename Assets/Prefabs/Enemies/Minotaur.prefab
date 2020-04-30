@@ -177,6 +177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _transitions:
   - {fileID: 7792270363791661391}
+  - {fileID: 7792270363791661377}
   _speed: 2
 --- !u!114 &7792270363791661391
 MonoBehaviour:
