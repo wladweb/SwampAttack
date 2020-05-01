@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public abstract class Weapon : MonoBehaviour
 {
@@ -9,5 +10,15 @@ public abstract class Weapon : MonoBehaviour
 
     [SerializeField] protected Bullet Bullet;
 
+    public string Label => _label;
+    public int Price => _price;
+    public Sprite Icon => _icon;
+    public bool IsBuyed => _isBuyed;
+
     public abstract void Shoot(Transform shootPoint);
+
+    internal void Buy()
+    {
+        _isBuyed = true;
+    }
 }

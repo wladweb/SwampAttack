@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -41,6 +42,12 @@ public class Player : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    internal void BuyWeapon(Weapon weapon)
+    {
+        Money -= weapon.Price;
+        _weapons.Add(weapon);
     }
 
     public void AddMoney(int money)
